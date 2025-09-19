@@ -167,6 +167,11 @@ accent-color: black;
 margin-right: 3px;
 }
 
+.remember-forgot a {
+color: #000000;
+text-decoration: none;
+}
+
 .remember-forgot a:hover{ 
     text-decoration: underline;
 }
