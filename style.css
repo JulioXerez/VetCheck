@@ -58,6 +58,7 @@ body {
 }
 
 .navigation a:hover:after{
+transform-origin: left;
 transform: scalex(1);
 transition: .5s;
 }
