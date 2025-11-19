@@ -3,9 +3,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class classeconexaocpf {
-    private static final String URL = "jdbc:mysql://localhost:3306/sistema";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:mysql://nozomi.proxy.rlwy.net:11272/railway";
+    private static final String USER = "";
+    private static final String PASSWORD = "hzYupDFgGQmKEmphULjVibEpcNuIaftG";
 
     public static Connection getConnection() {
         try {

@@ -3,9 +3,9 @@ import java.sql.DriverManager;
 
 
 public class classeconexão {
-    private static final String URL = "jdbc:mysql://licalhost:3306/sistema_login";
+    private static final String URL = "jdbc:mysql://nozomi.proxy.rlwy.net:11272/railway ";
     private static final String USER = "root"; //usuario do mySQL
-    private static final String PASSWORD = "senha"; //senha so mySQL
+    private static final String PASSWORD = "hzYupDFgGQmKEmphULjVibEpcNuIaftG"; //senha so mySQL
 
     public static Connection getConnection(){
         try {

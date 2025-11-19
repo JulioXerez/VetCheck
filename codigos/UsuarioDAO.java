@@ -30,9 +30,9 @@ public class UsuarioDAO {
 
     // Classe de conexão corrigida
     public static class classeConexao {
-        private static final String URL = "jdbc:mysql://localhost:3306/sistema_login";
+        private static final String URL = "jdbc:mysql://nozomi.proxy.rlwy.net:11272/railway ";
         private static final String USER = "root";
-        private static final String PASSWORD = "senha";
+        private static final String PASSWORD = "hzYupDFgGQmKEmphULjVibEpcNuIaftG";
 
         public static Connection getConnection(){
             try {
