@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class UsuarioDaopets {
+public class PetDAO {
 
     // Cadastrar novo animal
     public void cadastrarPet(Pet pet) {
@@ -20,7 +20,7 @@ public class UsuarioDaopets {
             stmt.setString(6, pet.getSexo());
             stmt.setString(7, pet.getQueixa());
             stmt.executeUpdate();
-            System.out.println("✅ Pet cadastrado com sucesso!");
+            System.out.println(" Pet cadastrado com sucesso!");
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar pet: " + e.getMessage());
         }

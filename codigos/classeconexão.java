@@ -10,12 +10,10 @@ public class classeconexão {
     public static Connection getConnection(){
         try {
             return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (Exception e) {
+            } catch (Exception e) {
             throw new RuntimeException ("Erro na coexão: " + e.getMessage());
         }
 
     }
-        
-}   
-
+}      
 

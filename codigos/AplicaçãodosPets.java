@@ -1,12 +1,11 @@
-import dao.PetDAO;
-import model.sistemaPets;
+
 import java.util.Scanner;
 
 public class AplicaçãodosPets {
     
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        PetDAO dao = new PetDAO();
+          PetDAO dao = new PetDAO();
 
         while (true) {
             System.out.println("\n--- SISTEMA DE CADASTRO DE PETS ---");
@@ -18,6 +17,8 @@ public class AplicaçãodosPets {
             sc.nextLine();  
 
             if (opção == 1) {
+             System.out.print("Tipo do animal (Cachorro/Gato/Outro) : ");
+                String tipo = sc.nextLine();
              System.out.print("Nome do pet : ");
                 String nome = sc.nextLine();
 
@@ -36,21 +37,20 @@ public class AplicaçãodosPets {
                 System.out.print("Queixas do problema : ");
              String queixas = sc.nextLine();
 
-             Pet pet = new Pet(nome, idade, raca, sexo, alergias, queixas);
+                Pet pet = new Pet (tipo, nome, idade, raca, sexo, alergias, queixas);
+                dao.cadastrarPet(pet);
 
-             }else if (opção == 2) {
-             System.out.print("Digite o nome do pet para exibir a ficha médica: ");
-             String nomePet = sc.nextLine();
-             dao.exibirFichaMedica(nomePet);
-
-               }else if(opção == 0 ){
-                System.out.print("Encerrando o sistema...");
+            } else if (opção == 2) {
+                System.out.print("Digite o nome do pet para exibir a ficha médica: ");      
+                String nomePet = sc.nextLine();
+                dao.exibirFichaMedica(nomePet);     
+            } else if (opção == 3) {
+                System.out.println("Saindo...");
                 break;
-              }else {
-                System.out.print("Opção inválida, tente novamente.");
-        
-       
-            }
+            } else {
+                System.out.println("Opção inválida, tente novamente.");
+            }   
         }
+        sc.close();
     }
 }
