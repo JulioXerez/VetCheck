@@ -1,41 +1,41 @@
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class PetDAO {
 
     // Cadastrar novo animal
-    public void cadastrarPet(Pet pet) {
+    public boolean cadastrarPet(Pets pets) {
         String sql = "INSERT INTO pets (tipo, nome, idade, alergias, raca, sexo, queixa) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        Statement Conexao = null;
-        try (Connection conn = Conexao.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, pet.getTipo());
-            stmt.setString(2, pet.getNome());
-            stmt.setInt(3, pet.getIdade());
-            stmt.setString(4, pet.getAlergias());
-            stmt.setString(5, pet.getRaca());
-            stmt.setString(6, pet.getSexo());
-            stmt.setString(7, pet.getQueixa());
-            stmt.executeUpdate();
+        PreparedStatement stmt = null;
+        try{
+                stmt = classeconexao.getConnection().prepareStatement(sql);
+                stmt.setString(1, pets.getTipo());
+                stmt.setString(2, pets.getNome());
+                stmt.setInt(3, pets.getIdade());
+                stmt.setString(4, pets.getAlergias());
+                stmt.setString(5, pets.getRaca());
+                stmt.setString(6, pets.getSexo());
+                stmt.setString(7, pets.getQueixas());
+                stmt.executeUpdate();
             System.out.println(" Pet cadastrado com sucesso!");
+            return true;
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar pet: " + e.getMessage());
+            return false;
         }
     }
 
     // Buscar ficha médica do pet pelo nome
     public void exibirFichaMedica(String nomePet) {
-        String sql = "SELECT * FROM pets WHERE nome = ?";
-        Statement Conexao = null;
-        try (Connection conn = Conexao.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, nomePet);
-            ResultSet rs = stmt.executeQuery();
+        String sql = "SELECT * FROM pets WHERE id = ?";
+        PreparedStatement stmt = null;
+        try{
+                stmt = classeconexao.getConnection().prepareStatement(sql);
+                stmt.setString(1, nomePet);
+                ResultSet rs = stmt.executeQuery();
 
-            if (rs.next()) {
+                if (rs.next()) {
                 System.out.println("\n --- FICHA MÉDICA DO PET --- ");
                 System.out.println("Tipo: " + rs.getString("tipo"));
                 System.out.println("Nome: " + rs.getString("nome"));

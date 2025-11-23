@@ -17,11 +17,18 @@ public class Sistemalogin {
             if (opcao == 1) {
                 System.out.print("Digite o usuário: ");
                 String user = sc.nextLine();
-
                 System.out.print("Digite a senha: ");
                 String pass = sc.nextLine();
+                System.out.print("Digite o cpf: ");
+                String cpf = sc.nextLine();
+                System.out.print("Digite a idade: ");
+                int idade = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Digite o email: ");
+                String email = sc.nextLine();
+        
 
-                if (dao.cadastrar(user, pass)) {
+                if (dao.cadastrar(user, pass, cpf, idade, email)) {
                     System.out.println(" Usuário cadastrado com sucesso!");
                 } else {
                     System.out.println(" Erro ao cadastrar usuário.");
@@ -34,7 +41,18 @@ public class Sistemalogin {
                 System.out.print("Senha: ");
                 String pass = sc.nextLine();
 
-                if (dao.autenticar(user, pass)) {
+                System.out.println("cpf: ");
+                String cpf = sc.nextLine();
+
+                System.out.print("Idade: ");
+                int idade = sc.nextInt();
+                sc.nextLine();
+                
+                System.out.print("Email: ");
+                String email = sc.nextLine();
+
+
+                if (dao.autenticar(user, pass, cpf, idade, email)) {
                     System.out.println(" Login bem-sucedido! Bem-vindo, " + user);
                 } else {
                     System.out.println(" Usuário ou senha incorretos.");
