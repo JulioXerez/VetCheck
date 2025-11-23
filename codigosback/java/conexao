@@ -1,0 +1,10 @@
+src/
+ ├─ conexao/
+ │   └─ Conexao.java              // conexão com o banco
+ ├─ dao/
+ │   ├─ LoginDAO.java             // operações de login
+ │   └─ UsuarioDAO.java           // operações de CPF, idade, nome
+ ├─ model/
+ │   └─ Usuario.java              // classe que representa o usuário
+ ├─ main/
+ │   └─ App.java                  // interface principal (menu, execução)
